@@ -14,10 +14,10 @@ function App() {
       <Toaster position="top-right" />
 
       <Routes>
-        {/* 🔓 Public Route */}
+        {/*  Public Route */}
         <Route path="/login" element={<Login />} />
 
-        {/* 🔐 Protected Routes */}
+        {/*  Protected Routes */}
         <Route
           path="/"
           element={
