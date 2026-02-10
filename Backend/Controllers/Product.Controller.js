@@ -1,5 +1,6 @@
 const Product = require("../Models/ProductModel");
 
+// Create a new product
 exports.createProduct = async (req, res) => {
     try {
         const product  = await Product.create({
@@ -12,14 +13,17 @@ exports.createProduct = async (req, res) => {
     }
 };
 
+// Get all products
 exports.getProducts = async (req, res) => {
     res.json(await Product.find());
 };
 
+// Get a single product by ID
 exports.getProduct = async (req, res) => {
     res.json(await Product.findById(req.params.id));
 };
 
+// Update a product by ID
 exports.updateProduct = async (req, res) => {
     let data = req.body;
     if(req.file) {
@@ -29,6 +33,7 @@ exports.updateProduct = async (req, res) => {
     res.json(product);
 }
 
+// Delete a product by ID
 exports.deleteProduct = async (req,res) => {
     await Product.findByIdAndDelete(req.params.id);
     res.json({
